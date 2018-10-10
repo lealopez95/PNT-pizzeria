@@ -1,0 +1,54 @@
+﻿.no-margin {
+    margin-top: 6px !important;
+}
+
+footer ul li {
+    margin-bottom: 12px;
+}
+
+
+
+.content-hogar {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+    .content-hogar h3 {
+        font-size: 30px;
+    }
+
+.info-deslizador {
+    background: #000000;
+    color: #ffffff;
+}
+
+    .info-deslizador div {
+        padding: 0 20px;
+        width: auto;
+        border-bottom: 0;
+        font-size: 11px;
+        letter-spacing: 0.02em;
+    }
+
+.iconoUsuario {
+    font-size: 24px;
+    color: #d3d3d6;
+}
+
+.validaciones {
+    border-radius: 12px;
+    padding: 5px 5px 5px 15px;
+    margin-top: 16px;
+}
+
+.bordeTexto {
+    text-shadow: 2px 2px 30px black;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 0.75px;
+    letter-spacing: 5px;
+}
+
+.subtitulo {
+    font-size: 40px;
+}

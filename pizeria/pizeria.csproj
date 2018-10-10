@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A9EEC55-4DE1-45DD-91AD-58A851728B1A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pizeria</RootNamespace>
+    <AssemblyName>pizeria</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\about-01-420x259.jpg" />
+    <Content Include="Content\images\about-02-420x259.jpg" />
+    <Content Include="Content\images\about-03-420x259.jpg" />
+    <Content Include="Content\images\about-04-144x129.png" />
+    <Content Include="Content\images\about-05-150x101.png" />
+    <Content Include="Content\images\about-06-150x129.png" />
+    <Content Include="Content\images\about-07-150x91.png" />
+    <Content Include="Content\images\about-08-326x330.jpg" />
+    <Content Include="Content\images\about-09-326x330.jpg" />
+    <Content Include="Content\images\about-1.png" />
+    <Content Include="Content\images\about-10-326x330.jpg" />
+    <Content Include="Content\images\agent-2.jpg" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\aside-blog-01-70x70.jpg" />
+    <Content Include="Content\images\aside-blog-02-70x70.jpg" />
+    <Content Include="Content\images\aside-blog-03-70x70.jpg" />
+    <Content Include="Content\images\barbecue-7-310x260.png" />
+    <Content Include="Content\images\barbecues-1-310x260.png" />
+    <Content Include="Content\images\barbecues-2-310x260.png" />
+    <Content Include="Content\images\barbecues-3-310x260.png" />
+    <Content Include="Content\images\barbecues-4-310x260.png" />
+    <Content Include="Content\images\barbecues-5-310x260.png" />
+    <Content Include="Content\images\barbecues-6-310x260.png" />
+    <Content Include="Content\images\bg-home-img.jpg" />
+    <Content Include="Content\images\bg-image-1.jpg" />
+    <Content Include="Content\images\bg-image-10.jpg" />
+    <Content Include="Content\images\bg-image-11.jpg" />
+    <Content Include="Content\images\bg-image-2.jpg" />
+    <Content Include="Content\images\bg-image-3.jpg" />
+    <Content Include="Content\images\bg-image-4.jpg" />
+    <Content Include="Content\images\bg-image-7.jpg" />
+    <Content Include="Content\images\bg-image-8.jpg" />
+    <Content Include="Content\images\bg-image-9.jpg" />
+    <Content Include="Content\images\bg-image-breadcrumbs.jpg" />
+    <Content Include="Content\images\bg-menu-1.jpg" />
+    <Content Include="Content\images\bg-menu-2.jpg" />
+    <Content Include="Content\images\bg-menu-3.jpg" />
+    <Content Include="Content\images\bg-menu-4.jpg" />
+    <Content Include="Content\images\bg-menu-5.jpg" />
+    <Content Include="Content\images\bg-menu-6.jpg" />
+    <Content Include="Content\images\bg-menu-7.jpg" />
+    <Content Include="Content\images\blog-6-70x70.jpg" />
+    <Content Include="Content\images\blog-7-70x70.jpg" />
+    <Content Include="Content\images\blog-8-70x70.jpg" />
+    <Content Include="Content\images\blog-grid-1-570x321.jpg" />
+    <Content Include="Content\images\blog-grid-2-570x321.jpg" />
+    <Content Include="Content\images\blog-grid-3-570x321.jpg" />
+    <Content Include="Content\images\blog-grid-4-570x321.jpg" />
+    <Content Include="Content\images\blog-modern-1-45x45.jpg" />
+    <Content Include="Content\images\blog-modern-2-45x45.jpg" />
+    <Content Include="Content\images\blog-modern-3-45x45.jpg" />
+    <Content Include="Content\images\brand-232x49.png" />
+    <Content Include="Content\images\brand-white-232x49.png" />
+    <Content Include="Content\images\burger-7-310x260.png" />
+    <Content Include="Content\images\burgers-1-310x260.png" />
+    <Content Include="Content\images\burgers-2-310x260.png" />
+    <Content Include="Content\images\burgers-3-310x260.png" />
+    <Content Include="Content\images\burgers-4-310x260.png" />
+    <Content Include="Content\images\burgers-5-310x260.png" />
+    <Content Include="Content\images\burgers-6-310x260.png" />
+    <Content Include="Content\images\certifikate-1.jpg" />
+    <Content Include="Content\images\deals-01-669x484.jpg" />
+    <Content Include="Content\images\deals-02-369x294.jpg" />
+    <Content Include="Content\images\deals-03-369x294.jpg" />
+    <Content Include="Content\images\deals-04-369x294.jpg" />
+    <Content Include="Content\images\deals-05-470x227.jpg" />
+    <Content Include="Content\images\deserts-1-310x260.png" />
+    <Content Include="Content\images\deserts-2-310x260.png" />
+    <Content Include="Content\images\deserts-3-310x260.png" />
+    <Content Include="Content\images\deserts-4-310x260.png" />
+    <Content Include="Content\images\deserts-5-310x260.png" />
+    <Content Include="Content\images\drinks-1-310x260.png" />
+    <Content Include="Content\images\drinks-2-310x260.png" />
+    <Content Include="Content\images\drinks-3-310x260.png" />
+    <Content Include="Content\images\drinks-4-310x260.png" />
+    <Content Include="Content\images\drinks-5-310x260.png" />
+    <Content Include="Content\images\drinks-6-310x260.png" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\gallery-1-1200x800_original.jpg" />
+    <Content Include="Content\images\gallery-2-1200x800_original.jpg" />
+    <Content Include="Content\images\gallery-3-1200x800_original.jpg" />
+    <Content Include="Content\images\gallery-cobbles-1-390x600.jpg" />
+    <Content Include="Content\images\gallery-cobbles-2-390x300.jpg" />
+    <Content Include="Content\images\gallery-cobbles-3-390x300.jpg" />
+    <Content Include="Content\images\gallery-cobbles-4-780x300.jpg" />
+    <Content Include="Content\images\gallery-cobbles-5-780x600.jpg" />
+    <Content Include="Content\images\gallery-cobbles-6-390x300.jpg" />
+    <Content Include="Content\images\gallery-cobbles-7-390x300.jpg" />
+    <Content Include="Content\images\gallery-grid-1-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-2-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-3-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-4-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-5-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-6-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-7-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-8-370x278.jpg" />
+    <Content Include="Content\images\gallery-grid-9-370x278.jpg" />
+    <Content Include="Content\images\gallery-masonry-1-770x586.jpg" />
+    <Content Include="Content\images\gallery-masonry-3-371x587.jpg" />
+    <Content Include="Content\images\gallery-masonry-6-769x384.jpg" />
+    <Content Include="Content\images\gallery-masonry-7-370x384.jpg" />
+    <Content Include="Content\images\gallery-masonry-7-371x384.jpg" />
+    <Content Include="Content\images\gmap-24x34.png" />
+    <Content Include="Content\images\gmap.png" />
+    <Content Include="Content\images\gmap_marker.png" />
+    <Content Include="Content\images\gmap_marker_active.png" />
+    <Content Include="Content\images\home-slide-1-1920x800.jpg" />
+    <Content Include="Content\images\home-slide-2-1920x800.jpg" />
+    <Content Include="Content\images\home-slide-3-1920x800.jpg" />
+    <Content Include="Content\images\home-slide-4-1920x800.jpg" />
+    <Content Include="Content\images\ie8-panel\warning_bar_0000_us.jpg" />
+    <Content Include="Content\images\index-01-566x401.jpg" />
+    <Content Include="Content\images\index-02-566x401.jpg" />
+    <Content Include="Content\images\index-03-566x401.jpg" />
+    <Content Include="Content\images\index-1-1008x585.jpg" />
+    <Content Include="Content\images\index-2-1008x585.jpg" />
+    <Content Include="Content\images\index-3-1008x585.jpg" />
+    <Content Include="Content\images\index-corporate-1-1008x585.jpg" />
+    <Content Include="Content\images\index-corporate-2-1008x585.jpg" />
+    <Content Include="Content\images\index-corporate-3-1008x585.jpg" />
+    <Content Include="Content\images\index-corporate-4-395x398.png" />
+    <Content Include="Content\images\index-corporate-5-266x256.png" />
+    <Content Include="Content\images\index-corporate-6-231x261.png" />
+    <Content Include="Content\images\index-gallery-1-1200x800_original.jpg" />
+    <Content Include="Content\images\index-gallery-1-480x394.jpg" />
+    <Content Include="Content\images\index-gallery-2-1200x800_original.jpg" />
+    <Content Include="Content\images\index-gallery-2-480x394.jpg" />
+    <Content Include="Content\images\index-gallery-3-1200x800_original.jpg" />
+    <Content Include="Content\images\index-gallery-3-480x394.jpg" />
+    <Content Include="Content\images\index-gallery-4-1200x800_original.jpg" />
+    <Content Include="Content\images\index-gallery-4-314x307.jpg" />
+    <Content Include="Content\images\index-gallery-4-480x394.jpg" />
+    <Content Include="Content\images\index-gallery-5-1200x800_original.jpg" />
+    <Content Include="Content\images\index-gallery-5-480x394.jpg" />
+    <Content Include="Content\images\index-sidebar-1-689x761.jpg" />
+    <Content Include="Content\images\index-sidebar-2-707x347.jpg" />
+    <Content Include="Content\images\index-sidebar-3-686x338.jpg" />
+    <Content Include="Content\images\index-testimonials-1-191x191.jpg" />
+    <Content Include="Content\images\index-testimonials-2-191x191.jpg" />
+    <Content Include="Content\images\index-testimonials-3-191x191.jpg" />
+    <Content Include="Content\images\index-testimonials-4-191x191.jpg" />
+    <Content Include="Content\images\isotope-loader.png" />
+    <Content Include="Content\images\logo-white-134x36.png" />
+    <Content Include="Content\images\member-profile-01-569x656.jpg" />
+    <Content Include="Content\images\member-profile-02-640x481.jpg" />
+    <Content Include="Content\images\member-profile-03-640x481.jpg" />
+    <Content Include="Content\images\member-profile-04-640x481.jpg" />
+    <Content Include="Content\images\member-profile-05-640x481.jpg" />
+    <Content Include="Content\images\member-profile-06-640x481.jpg" />
+    <Content Include="Content\images\member-profile-07-640x481.jpg" />
+    <Content Include="Content\images\member-profile-1-1200x800_original.jpg" />
+    <Content Include="Content\images\member-profile-2-1200x800_original.jpg" />
+    <Content Include="Content\images\member-profile-3-1200x800_original.jpg" />
+    <Content Include="Content\images\member-profile-4-1200x800_original.jpg" />
+    <Content Include="Content\images\member-profile-5-1200x800_original.jpg" />
+    <Content Include="Content\images\member-profile-6-1200x800_original.jpg" />
+    <Content Include="Content\images\menu-food-01.png" />
+    <Content Include="Content\images\menu-food-02.png" />
+    <Content Include="Content\images\menu-food-03.png" />
+    <Content Include="Content\images\menu-food-04.png" />
+    <Content Include="Content\images\menu-food-05.png" />
+    <Content Include="Content\images\menu-food-06.png" />
+    <Content Include="Content\images\menu-modern-1-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-1-310x260.png" />
+    <Content Include="Content\images\menu-modern-1-326x260.png" />
+    <Content Include="Content\images\menu-modern-10-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-11-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-12-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-2-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-2-310x260.png" />
+    <Content Include="Content\images\menu-modern-2-326x260.png" />
+    <Content Include="Content\images\menu-modern-3-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-3-310x260.png" />
+    <Content Include="Content\images\menu-modern-3-326x260.png" />
+    <Content Include="Content\images\menu-modern-4-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-4-310x260.png" />
+    <Content Include="Content\images\menu-modern-4-326x260.png" />
+    <Content Include="Content\images\menu-modern-5-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-5-310x260.png" />
+    <Content Include="Content\images\menu-modern-5-326x260.png" />
+    <Content Include="Content\images\menu-modern-6-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-6-310x260.png" />
+    <Content Include="Content\images\menu-modern-6-326x260.png" />
+    <Content Include="Content\images\menu-modern-7-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-8-310x260.jpg" />
+    <Content Include="Content\images\menu-modern-9-310x260.jpg" />
+    <Content Include="Content\images\mexican-1-310x260.png" />
+    <Content Include="Content\images\mexican-2-310x260.png" />
+    <Content Include="Content\images\mexican-3-310x260.png" />
+    <Content Include="Content\images\mexican-4-310x260.png" />
+    <Content Include="Content\images\mexican-5-310x260.png" />
+    <Content Include="Content\images\mexican-6-310x260.png" />
+    <Content Include="Content\images\mexican-7-310x260.png" />
+    <Content Include="Content\images\parallax-05.jpg" />
+    <Content Include="Content\images\photoswipe-controls.png" />
+    <Content Include="Content\images\photoswipe-controls.svg" />
+    <Content Include="Content\images\pizza-6-310x260.png" />
+    <Content Include="Content\images\pizza-7-310x260.png" />
+    <Content Include="Content\images\pizzas-1-310x260.png" />
+    <Content Include="Content\images\pizzas-2-310x260.png" />
+    <Content Include="Content\images\pizzas-3-310x260.png" />
+    <Content Include="Content\images\pizzas-4-310x260.png" />
+    <Content Include="Content\images\pizzas-5-310x260.png" />
+    <Content Include="Content\images\pizzas-6-310x260.png" />
+    <Content Include="Content\images\post-01-870x412.jpg" />
+    <Content Include="Content\images\post-02-870x412.jpg" />
+    <Content Include="Content\images\post-03-870x412.jpg" />
+    <Content Include="Content\images\post-04-570x321.jpg" />
+    <Content Include="Content\images\post-04-570x321.png" />
+    <Content Include="Content\images\post-06-570x321.jpg" />
+    <Content Include="Content\images\post-07-546x321.jpg" />
+    <Content Include="Content\images\post-08-398x269.jpg" />
+    <Content Include="Content\images\post-09-398x269.jpg" />
+    <Content Include="Content\images\post-09-570x321.jpg" />
+    <Content Include="Content\images\preloader.gif" />
+    <Content Include="Content\images\preloader.png" />
+    <Content Include="Content\images\product-01-542x448.png" />
+    <Content Include="Content\images\product-02-542x448.png" />
+    <Content Include="Content\images\product-03-542x448.png" />
+    <Content Include="Content\images\product-05-542x448.png" />
+    <Content Include="Content\images\product-thumb-01-84x69.png" />
+    <Content Include="Content\images\product-thumb-02-84x69.png" />
+    <Content Include="Content\images\product-thumb-05-84x69.png" />
+    <Content Include="Content\images\product-thumb-05-95x79.png" />
+    <Content Include="Content\images\salads-1-310x260.png" />
+    <Content Include="Content\images\salads-2-310x260.png" />
+    <Content Include="Content\images\salads-3-310x260.png" />
+    <Content Include="Content\images\salads-4-310x260.png" />
+    <Content Include="Content\images\salads-5-310x260.png" />
+    <Content Include="Content\images\sandwich-7-310x260.png" />
+    <Content Include="Content\images\sandwiches-1-310x260.png" />
+    <Content Include="Content\images\sandwiches-2-310x260.png" />
+    <Content Include="Content\images\sandwiches-3-310x260.png" />
+    <Content Include="Content\images\sandwiches-4-310x260.png" />
+    <Content Include="Content\images\sandwiches-5-310x260.png" />
+    <Content Include="Content\images\sandwiches-6-310x260.png" />
+    <Content Include="Content\images\shop-cart-1-130x130.jpg" />
+    <Content Include="Content\images\shop-cart-1-130x130.png" />
+    <Content Include="Content\images\shop-cart-2-130x130.jpg" />
+    <Content Include="Content\images\shop-cart-2-130x130.png" />
+    <Content Include="Content\images\shop-single-01-57x21.png" />
+    <Content Include="Content\images\shop-single-02-52x21.png" />
+    <Content Include="Content\images\shop-single-03-54x21.png" />
+    <Content Include="Content\images\slick-center-bg.png" />
+    <Content Include="Content\images\sushi-1-310x260.png" />
+    <Content Include="Content\images\sushi-2-310x260.png" />
+    <Content Include="Content\images\sushi-3-310x260.png" />
+    <Content Include="Content\images\sushi-4-310x260.png" />
+    <Content Include="Content\images\sushi-5-310x260.png" />
+    <Content Include="Content\images\sushi-6-310x260.png" />
+    <Content Include="Content\images\sushi-7-310x260.png" />
+    <Content Include="Content\images\team-01-326x330.jpg" />
+    <Content Include="Content\images\team-02-326x330.jpg" />
+    <Content Include="Content\images\team-03-326x330.jpg" />
+    <Content Include="Content\images\testimonials-01-104x104.jpg" />
+    <Content Include="Content\images\testimonials-02-104x104.jpg" />
+    <Content Include="Content\images\testimonials-03-104x104.jpg" />
+    <Content Include="Content\images\testimonials-04-104x104.jpg" />
+    <Content Include="Content\images\testimonials-05-104x104.jpg" />
+    <Content Include="Content\images\testimonials-06-104x104.jpg" />
+    <Content Include="Content\images\toast-1-310x260.png" />
+    <Content Include="Content\images\toast-2-310x260.png" />
+    <Content Include="Content\images\toast-3-310x260.png" />
+    <Content Include="Content\images\toast-4-310x260.png" />
+    <Content Include="Content\images\toast-5-310x260.png" />
+    <Content Include="Content\images\typography-1-770x485.jpg" />
+    <Content Include="Content\images\typography-2-350x220.jpg" />
+    <Content Include="Content\images\Untitled-1.png" />
+    <Content Include="Content\images\_blank.png" />
+    <Content Include="Content\images\pizza\JamonYMorron.jpg" />
+    <Content Include="Content\images\pizza\Longaniza.jpg" />
+    <Content Include="Content\images\pizza\Mozzarella.jpg" />
+    <Content Include="Content\images\pizza\Napolitana.jpg" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\styles_custom.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\material-design.svg" />
+    <Content Include="fonts\materialdesignicons-webfont.svg" />
+    <Content Include="fonts\Restaurant-Regular.svg" />
+    <Content Include="fonts\Thin-Regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\material-design.eot" />
+    <Content Include="fonts\material-design.ttf" />
+    <Content Include="fonts\material-design.woff" />
+    <Content Include="fonts\materialdesignicons-webfont.eot" />
+    <Content Include="fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="fonts\materialdesignicons-webfont.woff" />
+    <Content Include="fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="fonts\Restaurant-Regular.eot" />
+    <Content Include="fonts\Restaurant-Regular.ttf" />
+    <Content Include="fonts\Restaurant-Regular.woff" />
+    <Content Include="fonts\Thin-Regular.eot" />
+    <Content Include="fonts\Thin-Regular.ttf" />
+    <Content Include="fonts\Thin-Regular.woff" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\core.min.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\pointer-events.min.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Registrarse.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59707</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59707/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
