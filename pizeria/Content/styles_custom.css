@@ -36,6 +36,10 @@ footer ul li {
     color: #d3d3d6;
 }
 
+.iconoUsuario i {
+    font-style: normal !important;
+}
+
 .validaciones {
     border-radius: 12px;
     padding: 5px 5px 5px 15px;
@@ -51,4 +55,20 @@ footer ul li {
 
 .subtitulo {
     font-size: 40px;
+}
+
+.product-list-item {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #f16121;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left
+}
+
+.product-list-item img {
+    margin-left: 3%;
 }

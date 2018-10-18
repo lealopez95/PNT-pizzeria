@@ -13,7 +13,5 @@ namespace pizeria.Controllers
         {
             return View();
         }
-
-        //GET: /HelloWorld/ 
     }
 }
