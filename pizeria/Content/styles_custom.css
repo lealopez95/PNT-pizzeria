@@ -62,7 +62,7 @@ footer ul li {
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 40px;
     background-color: #f16121;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -70,5 +70,34 @@ footer ul li {
 }
 
 .product-list-item img {
-    margin-left: 3%;
+    border-radius: 21px;
+    margin-top: 1px;
+}
+
+.product-description {
+    float: left;
+    max-height: 156px;
+    background-color: white;
+    border-radius: 20px;
+    border: solid 1px #d3d3d6;
+    padding: 2% 8% 2% 2%;
+}
+
+.cantity-box { 
+    width: 30px;
+    text-align: center;
+}
+
+.product-list-item .btn-default {
+    color: #2b2c2f;
+    background-color: white;
+    border-color: #d3d3d6;
+    padding: 0px;
+    width: 30px;
+}
+
+.product-list-item .btn-default:hover {
+    color: #fff;
+    background-color: #2b2c2f;
+    border-color: #2b2c2f;
 }
