@@ -9,9 +9,15 @@ namespace pizeria.Controllers
     public class ProductController : Controller
     {
         //GET: Product
-        public ActionResult Index( int category=1)
+        public ActionResult Index( int category)
         {
-            return View();
+            if (category == 1) {
+                return View();
+            }  else
+            {
+                return HttpNotFound();
+            }
+            
         }
     }
 }

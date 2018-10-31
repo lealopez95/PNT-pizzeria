@@ -18,7 +18,8 @@ namespace pizeria
 
             bundles.Add(new ScriptBundle("~/bundles/jquery_piza").Include(
                 "~/Scripts/core.min.js",
-                "~/Scripts/script.js"
+                "~/Scripts/script.js",
+                "~/Scripts/validacionUsuarios.js"
                 ));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información. De este modo, estará

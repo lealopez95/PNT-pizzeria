@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Pedidos";
+}
+<!-- Page Content-->
+<main class="page-content container">
+    <div class="well">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="tabla table table-hover">
+                    <thead class="tabla-head">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Importe</th>
+                            <th scope="col">Direcci&oacute;n</th>
+                            <th scope="col">Tel&eacute;fono</th>
+                            <th scope="col">Pedido</th>
+                            <th scope="col">Acci&oacute;n</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="columna">
+                            <th scope="row">1</th>
+                            <td>10/10/2018</td>
+                            <td>$254.5</td>
+                            <td>Corrientes 348, 2do B</td>
+                            <td>4855-7846</td>
+                            <td>4855-7846</td>
+                            <td>
+                                <form>
+                                    <button type="button" id="boton1" class="btn btn-default botonReset" data-id="1">Reset</button>
+                                    <div class="form-group" id="form1">
+                                        <select class="form-control entregar_cancelar" data-id="1">
+                                            <option selected></option>
+                                            <option value="Entregar">Entregar</option>
+                                            <option value="Cancelar">Cancelar</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>04/10/2018</td>
+                            <td>$1075</td>
+                            <td>Yatay 240</td>
+                            <td>4981-3251</td>
+                            <td>4855-7846</td>
+                            <td>
+                                <form>
+                                    <button type="button" id="boton2" class="btn btn-default botonReset" data-id="2">Reset</button>
+                                    <div class="form-group" id="form2">
+                                        <select class="form-control entregar_cancelar" data-id="2">
+                                            <option class="vacio" selected></option>
+                                            <option value="Entregar">Entregar</option>
+                                            <option value="Cancelar">Cancelar</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>02/09/2018</td>
+                            <td>$100</td>
+                            <td>Curapaligue 2, 4to</td>
+                            <td>4982-1323</td>
+                            <td>4855-7846</td>
+                            <td>
+                                <form>
+                                    <button type="button" id="boton3" class="btn btn-default botonReset" data-id="3">Reset</button>
+                                    <div class="form-group" id="form3">
+                                        <select class="form-control entregar_cancelar" data-id="3">
+                                            <option class="vacio" selected></option>
+                                            <option value="Entregar">Entregar</option>
+                                            <option value="Cancelar">Cancelar</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@section Scripts {
+    <script type="text/javascript" src="~/Scripts/sucursal.js" ></script>
+}

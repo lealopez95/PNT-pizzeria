@@ -6,30 +6,28 @@ footer ul li {
     margin-bottom: 12px;
 }
 
-
-
 .content-hogar {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
 }
 
-    .content-hogar h3 {
-        font-size: 30px;
-    }
+.content-hogar h3 {
+    font-size: 30px;
+}
 
 .info-deslizador {
     background: #000000;
     color: #ffffff;
 }
 
-    .info-deslizador div {
-        padding: 0 20px;
-        width: auto;
-        border-bottom: 0;
-        font-size: 11px;
-        letter-spacing: 0.02em;
-    }
+.info-deslizador div {
+    padding: 0 20px;
+    width: auto;
+    border-bottom: 0;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+}
 
 .iconoUsuario {
     font-size: 24px;
@@ -56,6 +54,38 @@ footer ul li {
 .subtitulo {
     font-size: 40px;
 }
+
+/*Lista de pedidos de sucursal ------------------------*/
+
+.tabla {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    border: 1px solid #DDD;
+}
+
+    .tabla > td {
+        text-align: center;
+    }
+
+th {
+    text-align: center !important;
+}
+
+.tabla-head {
+    background: #f16121;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+    .tabla-head th {
+        color: white;
+    }
+
+.botonReset {
+    display: none;
+}
+
+/*Productos----------------*/
 
 .product-list-item {
     position: relative;
