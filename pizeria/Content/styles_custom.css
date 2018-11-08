@@ -123,7 +123,17 @@ th {
     background-color: white;
     border-color: #d3d3d6;
     padding: 0px;
-    width: 30px;
+    width: 77px;
+}
+
+.row .buttons {
+    text-align: center;
+    display: initial;   
+}
+
+.qty {
+    line-height: 1;
+    width: 20px !important;
 }
 
 .product-list-item .btn-default:hover {
@@ -131,3 +141,21 @@ th {
     background-color: #2b2c2f;
     border-color: #2b2c2f;
 }
+
+.product-list-item .cartButton {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .product-list-item{
+        text-align: center;
+    }
+
+    .product-description{
+        width: 90%;
+        margin-top: 10px !important;
+        margin-left: 22px;
+    }
+}
+
+    
