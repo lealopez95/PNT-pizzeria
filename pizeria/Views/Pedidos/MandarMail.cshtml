@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "¡Gracias por su pedido!";
+}
+
+<h4>¡Gracias por su pedido!</h4>
+<br />
+<h3>Su pedido fue enviado a la sucursal y estará llegando muy pronto.</h3>
+
+<!-- Espera 12 segundos y redirecciona a Home/Index -->
+@section Scripts {
+    <script>
+        wait(15000);
+        window.location.href = "/";
+
+        function wait(ms) {
+            var start = new Date().getTime();
+            var end = start;
+            while (end < start + ms) {
+                end = new Date().getTime();
+            }
+        }
+    </script>
+}

@@ -8,8 +8,8 @@ function ini() {
 
     botonRegistrarse = $('#botonRegistrarse').click(function (e) {
 
-        password = $("#passwordRegistro").val();
-
+        password = $("#PasswordReg").val();
+        
         if (password.length < 8) {
 
             e.preventDefault();
@@ -19,8 +19,8 @@ function ini() {
             $("#menos8Caracteres").css("display", "none");
         }
 
-        confirmarPassword = $("#confirmarPasswordRegistro").val();
-
+        confirmarPassword = $("#ConfirmacionPassword").val();
+        
         if (password != confirmarPassword) {
             e.preventDefault();
             alert("Las contraseñas no coinciden.")

@@ -6,6 +6,10 @@ footer ul li {
     margin-bottom: 12px;
 }
 
+.deslizador {
+    margin-bottom: 0;
+}
+
 .content-hogar {
     position: relative;
     max-width: 100%;
@@ -14,11 +18,21 @@ footer ul li {
 
 .content-hogar h3 {
     font-size: 30px;
+    margin: 20px 0 20px 0px;
+    color: #aaa !important;
+}
+
+.content-hogar .texto-de-arriba {
+    margin-bottom: 0px;
 }
 
 .info-deslizador {
     background: #000000;
     color: #ffffff;
+    margin-top: 0px;
+    height: auto;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
 }
 
 .info-deslizador div {
@@ -123,17 +137,7 @@ th {
     background-color: white;
     border-color: #d3d3d6;
     padding: 0px;
-    width: 77px;
-}
-
-.row .buttons {
-    text-align: center;
-    display: initial;   
-}
-
-.qty {
-    line-height: 1;
-    width: 20px !important;
+    width: 30px;
 }
 
 .product-list-item .btn-default:hover {
@@ -141,21 +145,3 @@ th {
     background-color: #2b2c2f;
     border-color: #2b2c2f;
 }
-
-.product-list-item .cartButton {
-    margin-top: 5px;
-}
-
-@media screen and (max-width: 767px) {
-    .product-list-item{
-        text-align: center;
-    }
-
-    .product-description{
-        width: 90%;
-        margin-top: 10px !important;
-        margin-left: 22px;
-    }
-}
-
-    

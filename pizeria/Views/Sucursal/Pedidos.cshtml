@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<pizeria.Models.Pedido>
+
+@{
     ViewBag.Title = "Pedidos";
 }
 <!-- Page Content-->
@@ -19,66 +21,95 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="columna">
-                            <th scope="row">1</th>
-                            <td>10/10/2018</td>
-                            <td>$254.5</td>
-                            <td>Corrientes 348, 2do B</td>
-                            <td>4855-7846</td>
-                            <td>4855-7846</td>
-                            <td>
-                                <form>
-                                    <button type="button" id="boton1" class="btn btn-default botonReset" data-id="1">Reset</button>
-                                    <div class="form-group" id="form1">
-                                        <select class="form-control entregar_cancelar" data-id="1">
-                                            <option selected></option>
-                                            <option value="Entregar">Entregar</option>
-                                            <option value="Cancelar">Cancelar</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>04/10/2018</td>
-                            <td>$1075</td>
-                            <td>Yatay 240</td>
-                            <td>4981-3251</td>
-                            <td>4855-7846</td>
-                            <td>
-                                <form>
-                                    <button type="button" id="boton2" class="btn btn-default botonReset" data-id="2">Reset</button>
-                                    <div class="form-group" id="form2">
-                                        <select class="form-control entregar_cancelar" data-id="2">
-                                            <option class="vacio" selected></option>
-                                            <option value="Entregar">Entregar</option>
-                                            <option value="Cancelar">Cancelar</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>02/09/2018</td>
-                            <td>$100</td>
-                            <td>Curapaligue 2, 4to</td>
-                            <td>4982-1323</td>
-                            <td>4855-7846</td>
-                            <td>
-                                <form>
-                                    <button type="button" id="boton3" class="btn btn-default botonReset" data-id="3">Reset</button>
-                                    <div class="form-group" id="form3">
-                                        <select class="form-control entregar_cancelar" data-id="3">
-                                            <option class="vacio" selected></option>
-                                            <option value="Entregar">Entregar</option>
-                                            <option value="Cancelar">Cancelar</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="columna">
+                                <th scope="row">@item.ID</th>
+                                <td>@item.fecha</td>
+                                <td>$@item.importe</td>
+                                <td>@item.direccion</td>
+                                <td>@item.telefono</td>
+                                <td>@item.pedido</td>
+                                <td>
+                                    <form>
+                                        @{ 
+                                            string idBoton = "boton" + item.ID.ToString();
+                                            string idForm = "form" + item.ID.ToString();
+                                        }
+                                        <button type="button" id="@idBoton" class="btn btn-default botonReset" data-id="1">Reset</button>
+                                        <div class="form-group" id="@idForm">
+                                            <select class="form-control entregar_cancelar" data-id="@item.ID.ToString()">
+                                                <option selected></option>
+                                                <option value="Entregar">Entregar</option>
+                                                <option value="Cancelar">Cancelar</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                                            }
+                        <!--
+    <tr class="columna">
+        <th scope="row">1</th>
+        <td>10/10/2018</td>
+        <td>$254.5</td>
+        <td>Corrientes 348, 2do B</td>
+        <td>4855-7846</td>
+        <td>4855-7846</td>
+        <td>
+            <form>
+                <button type="button" id="boton1" class="btn btn-default botonReset" data-id="1">Reset</button>
+                <div class="form-group" id="form1">
+                    <select class="form-control entregar_cancelar" data-id="1">
+                        <option selected></option>
+                        <option value="Entregar">Entregar</option>
+                        <option value="Cancelar">Cancelar</option>
+                    </select>
+                </div>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>04/10/2018</td>
+        <td>$1075</td>
+        <td>Yatay 240</td>
+        <td>4981-3251</td>
+        <td>4855-7846</td>
+        <td>
+            <form>
+                <button type="button" id="boton2" class="btn btn-default botonReset" data-id="2">Reset</button>
+                <div class="form-group" id="form2">
+                    <select class="form-control entregar_cancelar" data-id="2">
+                        <option class="vacio" selected></option>
+                        <option value="Entregar">Entregar</option>
+                        <option value="Cancelar">Cancelar</option>
+                    </select>
+                </div>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>02/09/2018</td>
+        <td>$100</td>
+        <td>Curapaligue 2, 4to</td>
+        <td>4982-1323</td>
+        <td>4855-7846</td>
+        <td>
+            <form>
+                <button type="button" id="boton3" class="btn btn-default botonReset" data-id="3">Reset</button>
+                <div class="form-group" id="form3">
+                    <select class="form-control entregar_cancelar" data-id="3">
+                        <option class="vacio" selected></option>
+                        <option value="Entregar">Entregar</option>
+                        <option value="Cancelar">Cancelar</option>
+                    </select>
+                </div>
+            </form>
+        </td>
+    </tr>
+    -->
                     </tbody>
                 </table>
             </div>
@@ -88,5 +119,5 @@
 
 
 @section Scripts {
-    <script type="text/javascript" src="~/Scripts/sucursal.js" ></script>
+    <script type="text/javascript" src="~/Scripts/sucursal.js"></script>
 }
