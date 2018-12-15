@@ -1,10 +1,11 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
 }
 <!-- Page Content-->
 <main class="page-content">
     <!-- Swiper variant 3-->
-    <section class="bg-gray-darker">
+    <section class="bg-gray-darker deslizador">
         <div class="swiper-variant-1">
             <div data-slide-effect="fade" data-min-height="600px" class="swiper-container swiper-slider">
                 <div class="swiper-wrapper">
@@ -68,68 +69,71 @@
         </div>
     </section>
 
-    <section class="section-50 section-sm-100">
+
+    <section>
         <div class="info-deslizador">
             <!-- BLOQUES DE LA HOME -->
             <div class="content-hogar">
-                <div class="col-lg-4 col-sm-12">
-                    <h3>ENVÍO GRATIS A PARTIR DE $500</h3>
-                
+                <div class="row texto-de-arriba">
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-12">
+                        <h3>ENVÍO GRATIS A PARTIR DE $500</h3>
+                    </div>
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-12">
+                        <h3>SE ACEPTAN TODOS LOS MEDIOS DE PAGO</h3>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-sm-12">
-                    <h3>SE ACEPTAN TODOS LOS MEDIOS DE PAGO</h3>
-                    
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <h3>1 HORA MÁXIMO DE DEMORA O SU PEDIDO ES GRATIS</h3>
-                    
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3 col-sm-12">
+                        <h3>1 HORA MÁXIMO DE DEMORA O SU PEDIDO ES GRATIS</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-       
-        <section class="section-50 section-sm-top-90 section-sm-bottom-100 bg-image-6">
-            <div class="shell text-center">
-                <h3>Nuestro Menu</h3>
-                <div class="range range-xs-center">
-                    <div class="cell-sm-6 cell-md-4">
-                        <div class="menu-variant-1">
-                            <img src="../Content/images/bloque_categorias/pizzas.jpg" alt="" width="310" height="260" class="img-responsive reveal-inline-block" />
-                            <div class="caption">
-                                <h5 class="title"><a href="/pizzas.cshtml" class="link-white">Pizzas</a></h5>
-                            </div>
+
+    <section class="section-50 section-sm-top-90 section-sm-bottom-100 bg-image-6">
+        <div class="shell text-center">
+            <h3>Nuestro Menu</h3>
+            <div class="range range-xs-center">
+                <div class="cell-sm-6 cell-md-4">
+                    <div class="menu-variant-1">
+                        <img src="../Content/images/bloque_categorias/pizzas.jpg" alt="" width="310" height="260" class="img-responsive reveal-inline-block" />
+                        <div class="caption">
+                            <h5 class="title">@Html.ActionLink("Pizzas", "Index", "Product", new { category = 1 }, new { @class = "link-white" })</h5>
                         </div>
                     </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-50 offset-sm-top-0">
-                        <div class="menu-variant-1">
-                            <img src="../Content/images/bloque_categorias/empanadas.jpg" alt="" width="310" height="260" class="img-responsive reveal-inline-block" />
-                            <div class="caption">
-                                <h5 class="title"><a href="/empanadas.cshtml" class="link-white">Empanadas</a></h5>
-                            </div>
+                </div>
+                <div class="cell-sm-6 cell-md-4 offset-top-50 offset-sm-top-0">
+                    <div class="menu-variant-1">
+                        <img src="../Content/images/bloque_categorias/empanadas.jpg" alt="" width="310" height="260" class="img-responsive reveal-inline-block" />
+                        <div class="caption">
+                            <h5 class="title">@Html.ActionLink("Empanadas", "Index", "Product", new { category = 2 }, new { @class = "link-white" })</h5>
                         </div>
                     </div>
-                    <div class="cell-sm-6 cell-md-4 offset-top-50 offset-md-top-0">
-                        <div class="menu-variant-1">
-                            <img src="../Content/images/bloque_categorias/bebidas.jpg" alt="" width="310" height="260" class="img-responsive reveal-inline-block" />
-                            <div class="caption">
-                                <h5 class="title"><a href="/bebidas.cshtml" class="link-white">Bebidas</a></h5>
-                            </div>
+                </div>
+                <div class="cell-sm-6 cell-md-4 offset-top-50 offset-md-top-0">
+                    <div class="menu-variant-1">
+                        <img src="../Content/images/bloque_categorias/bebidas.jpg" alt="" width="310" height="260" class="img-responsive reveal-inline-block" />
+                        <div class="caption">
+                            <h5 class="title"> @Html.ActionLink("Bebidas", "Index", "Product", new { category = 3 }, new { @class = "link-white" })</h5>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-       
-        <section>
-            <!-- RD Google Map-->
-            <div data-zoom="15" data-y="40.643180" data-x="-73.9874068" data-styles="" class="rd-google-map rd-google-map__model">
-                <ul class="map_locations">
-                    <li data-y="-58.429230099999984" data-x="-34.609953">
-                        
-                        <p><span class="icon"><img src="../Content/images/gmap-24x34.png" alt="" width="24" height="34" /></span>Yatay 240, CABA</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        </div>
+    </section>
+
+    <section>
+        <!-- RD Google Map
+        <div data-zoom="15" data-y="40.643180" data-x="-73.9874068" data-styles="" class="rd-google-map rd-google-map__model">
+            <ul class="map_locations">
+                <li data-y="-58.429230099999984" data-x="-34.609953">
+
+                    <p><span class="icon"><img src="../Content/images/gmap-24x34.png" alt="" width="24" height="34" /></span>Yatay 240, CABA</p>
+                </li>
+            </ul>
+        </div>-->
+        <iframe src="https://www.google.com/maps/d/embed?mid=1YMhvPOGWN-253tHd_xx66ziA2RwBdf41" style="margin: 0; width: 100%; height:480px;"></iframe>
+    </section>
 </main>

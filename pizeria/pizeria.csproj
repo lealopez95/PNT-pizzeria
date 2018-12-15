@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -148,11 +154,31 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SucursalController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812121733088_init.cs" />
+    <Compile Include="Migrations\201812121733088_init.Designer.cs">
+      <DependentUpon>201812121733088_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Bebida.cs" />
+    <Compile Include="Models\CategoriaProducto.cs" />
+    <Compile Include="Models\ContextoDBContext.cs" />
+    <Compile Include="Models\Empanada.cs" />
+    <Compile Include="Models\EstadoPedido.cs" />
+    <Compile Include="Models\GustoEmpanada.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Pizza.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Sucursal.cs" />
+    <Compile Include="Models\TamanioPizza.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -501,10 +527,22 @@
     <Content Include="Views\Home\Registrarse.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Sucursal\Pedidos.cshtml" />
+    <Content Include="Views\Pedidos\Create.cshtml" />
+    <Content Include="Views\Pedidos\Delete.cshtml" />
+    <Content Include="Views\Pedidos\Details.cshtml" />
+    <Content Include="Views\Pedidos\Edit.cshtml" />
+    <Content Include="Views\Pedidos\ViejoIndex.cshtml" />
+    <Content Include="Views\Pedidos\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Home\LoginIncorrecto.cshtml" />
+    <Content Include="Views\Pedidos\MandarMail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -518,6 +556,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812121733088_init.resx">
+      <DependentUpon>201812121733088_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

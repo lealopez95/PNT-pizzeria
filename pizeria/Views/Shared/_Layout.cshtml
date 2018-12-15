@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en" class="wide wow-animation">
 <head>
     <meta name="format-detection" content="telephone=no">
@@ -7,7 +8,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="~/Content/images/favicon.ico" type="image/x-icon">
     <!-- Site Title-->
-    <title>@ViewBag.Title - Pizaline</title>
+    <title>@ViewBag.Title - Pizzaline</title>
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Changa+One:400,400i%7CGrand+Hotel%7CLato:300,400,400italic,700">
     @Styles.Render("~/Content/css_piza")
@@ -30,7 +31,8 @@
                                         <div class="rd-navbar-panel rd-navbar-aside-left">
                                             <!-- RD Navbar Toggle-->
                                             <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
-                                            <!-- RD Navbar Brand--><a href="index.html" class="rd-navbar-brand brand">
+                                            <!-- RD Navbar Brand-->
+                                            <a href="/" class="rd-navbar-brand brand">
                                                 <div class="brand-logo">
                                                     <img src="~/Content/images/brand-232x49.png" alt="" width="232" height="49" />
                                                 </div>
@@ -39,31 +41,21 @@
                                         <div class="rd-navbar-aside-right">
                                             <!-- RD Navbar Aside-->
                                             <ul class="list-links list-inline text-left">
-                                                @* <li>
-                                                        <div class="unit unit-horizontal unit-middle unit-spacing-xs">
-                                                            <div class="unit-left"><span class="icon icon-circle icon-gray-dark icon-xxs mdi mdi-map-marker text-middle"></span></div>
-                                                            <div class="unit-body">
-                                                                <address class="contact-info"><a href="#" class="link-default link-xs">267 Park Avenue <br class="visible-md visible-lg"> New York, NY 90210</a></address>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="unit unit-horizontal unit-middle unit-spacing-xs">
-                                                            <div class="unit-left"><span class="icon icon-circle icon-gray-dark icon-xxs mdi mdi-phone text-middle"></span></div>
-                                                            <div class="unit-body">
-                                                                <address class="contact-info"><a href="callto:#" class="link-default link-xs">1-800-1234-567</a><span class="reveal-block text-base link-xs">Mon – Sat: 9:00–18:00</span></address>
-                                                            </div>
-                                                        </div>
-                                                    </li>*@
                                                 <li>
-                                                    <a class="iconoUsuario" href="#" data-toggle="modal" data-target="#iniciarSesion"><i class="fas fa-user"></i></a>
+                                                    @if (Session["ID"] == null)
+                                                    {
+                                                        <a class="iconoUsuario" href="#" data-toggle="modal" data-target="#iniciarSesion"><i class="fas fa-user"></i></a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="iconoUsuario" href="#" data-toggle="modal" data-target="#cerrarSesion">@Session["Nombre"]</a>
+                                                    }
+
                                                 </li>
                                                 <li>
                                                     <ul class="list-inline list-inline-sm">
                                                         <li><a href="http://instagram.com/nuestraPizzeria" class="link-silver-light"><span class="icon icon-sm-mod-1 fa fa-instagram"></span></a></li>
                                                         <li><a href="http://facebook.com/nuestraPizzeria" class="link-silver-light"><span class="icon icon-sm-mod-1 fa fa-facebook"></span></a></li>
-                                                        @*@<li><a href="#" class="link-silver-light"><span class="icon icon-sm-mod-1 fa fa-twitter"></span></a></li>
-                                                            <li><a href="#" class="link-silver-light"><span class="icon icon-sm-mod-1 fa fa-google-plus"></span></a></li>*@
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -78,15 +70,15 @@
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
                                     <li>
-                                        @Html.ActionLink("Pizzas", "Index", "Product", new { category = 1 }, null);
+                                        @Html.ActionLink("Pizzas", "Index", "Product", new { category = 0 }, null);
                                         <!--<a href="/pizzas.cshtml">Pizzas</a> -->
                                     </li>
                                     <li>
-                                        @Html.ActionLink("Empanadas", "Index", "Product", new { category = 2 }, null);
+                                        @Html.ActionLink("Empanadas", "Index", "Product", new { category = 1 }, null);
                                         <!--<a href="/empanadas.cshtml">Empanadas</a>-->
                                     </li>
                                     <li>
-                                        @Html.ActionLink("Bebidas", "Index", "Product", new { category = 3 }, null);
+                                        @Html.ActionLink("Bebidas", "Index", "Product", new { category = 2 }, null);
                                         <!--<a href="/bebidas.cshtml">Bebidas</a>-->
                                     </li>
                                     <li>
@@ -118,9 +110,6 @@
             <div class="row">
                 @RenderBody()
             </div>
-            @*<footer>
-                    <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-                </footer>*@
         </div>
         <footer class="page-foot text-center text-lg-left footer-light context-dark">
             <section class="section-top-45 section-bottom-40">
@@ -148,7 +137,7 @@
                                     <div class="unit unit-horizontal unit-middle unit-spacing-xs">
                                         <div class="unit-left"><span class="icon icon-circle icon-gray-dark icon-xxs mdi mdi-map-marker text-middle"></span></div>
                                         <div class="unit-body">
-                                            <address class="contact-info">Almagro - Yatay 240</address>
+                                            <address class="contact-info"><a href="https://www.google.com/maps/place/Yatay+240,+C1184ADD+CABA/&#64;-34.6099486,-58.4314188,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcca680ba438df:0xbf0c145b9d69a22d!8m2!3d-34.609953!4d-58.4292301" target="_blank">Almagro - Yatay 240</a></address>
                                         </div>
                                     </div>
                                 </li>
@@ -156,7 +145,7 @@
                                     <div class="unit unit-horizontal unit-middle unit-spacing-xs">
                                         <div class="unit-left"><span class="icon icon-circle icon-gray-dark icon-xxs mdi mdi-map-marker text-middle"></span></div>
                                         <div class="unit-body">
-                                            <address class="contact-info">Belgrano - Monroe 1234</address>
+                                            <address class="contact-info"><a href="https://www.google.com/maps/place/Av.+Monroe+1234,+C1428BKL+CABA/&#64;-34.5513488,-58.4500022,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcb4317b2a9e87:0xaefc23c2d4c73c06!8m2!3d-34.5513532!4d-58.4478135" target="_blank">Belgrano - Monroe 1234</a></address>
                                         </div>
                                     </div>
                                 </li>
@@ -164,7 +153,7 @@
                                     <div class="unit unit-horizontal unit-middle unit-spacing-xs">
                                         <div class="unit-left"><span class="icon icon-circle icon-gray-dark icon-xxs mdi mdi-map-marker text-middle"></span></div>
                                         <div class="unit-body">
-                                            <address class="contact-info">Monserrat - Balcarce 50</address>
+                                            <address class="contact-info"><a href="https://www.google.com/maps/place/Balcarce+50,+C1064+CABA/&#64;-34.6081982,-58.3724951,17z/data=!3m1!4b1!4m5!3m4!1s0x95a3352c95f0d4f5:0xee8dc0a5eb259e82!8m2!3d-34.6082026!4d-58.3703064" target="_blank">Monserrat - Balcarce 50</a></address>
                                         </div>
                                     </div>
                                 </li>
@@ -175,10 +164,11 @@
                             <div class="unit unit-sm-horizontal unit-sm-top unit-spacing-xs offset-top-15">
                                 <div class="unit-left"><span class="icon icon-md-mod-1 icon-default mdi mdi-phone text-middle"></span></div>
                                 <div class="unit-body">
-                                    <address class="contact-info"><a href="callto:#" class="link-white link-lg">0800-666-6969</a></address><span class="contact-info">Todos los días 24/7</span>
+                                    <address class="contact-info"><a href="callto:0800-666-6969" class="link-white link-lg">0800-666-6969</a></address><span class="contact-info">Todos los días 24/7</span>
                                 </div>
                             </div>
                         </div>
+                        @Html.ActionLink("Mandar Mail", "MandarMail", "Pedidos")
                     </div>
                 </div>
             </section>
@@ -211,23 +201,48 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="">
+                    <form method="post" action="Usuarios/Login">
+                        @Html.AntiForgeryToken()
 
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
+                            <input type="email" id="Email" name="Email" class="form-control" placeholder="Email" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="password" id="password" class="form-control" required placeholder="Contraseña">
+                            <input type="password" id="Password" name="Password" class="form-control" required placeholder="Contraseña">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Ingresar</button>
-                        <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#registrarse">Registrarse</a>
+                        <a href="#" style="margin-left: 235px" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#registrarse">Registrarse</a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--------------------------------------------------------------------------------------------------------------->
+
+    <!--Modal Cerrar Sesion-->
+    <div class="modal fade" id="cerrarSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLongTitle">¿Desea cerrar su sesión?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="Usuarios/Logout">
+                        @Html.AntiForgeryToken()
+
+                        <button type="submit" class="btn btn-primary" style="margin-left: 140px">Cerrar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--------------------------------------------------------------------------------------------------------------->
     <!--Registrarse -->
     <div class="modal fade" id="registrarse" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -240,31 +255,32 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="">
+                    <form method="post" action="Usuarios/Create">
+                        @Html.AntiForgeryToken()
 
                         <div class="form-group">
-                            <input type="text" id="nombre" class="form-control" required placeholder="Nombre y Apellido">
+                            <input type="text" id="NombreApellido" name="NombreApellido" class="form-control" required placeholder="Nombre y Apellido">
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
+                            <input type="email" id="Email" name="Email" class="form-control" placeholder="Email" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" id="direccion" class="form-control" required placeholder="Direccion">
+                            <input type="text" id="Direccion" name="Direccion" class="form-control" required placeholder="Direccion">
                         </div>
 
                         <div class="form-group">
-                            <input type="password" id="passwordRegistro" class="form-control" required placeholder="Contraseña (8 caracteres mínimo)">
+                            <input type="password" id="PasswordReg" name="Password" class="form-control" required placeholder="Contraseña (8 caracteres mínimo)">
                             <label id="menos8Caracteres" class="alert-danger validaciones" style="display: none;">La contraseña debe tener como mínimo 8 caracteres.</label>
                         </div>
 
                         <div class="form-group">
-                            <input type="password" id="confirmarPasswordRegistro" class="form-control" required placeholder="Confirmar Contraseña">
+                            <input type="password" id="ConfirmacionPassword" name="ConfirmacionPassword" class="form-control" required placeholder="Confirmar Contraseña">
                         </div>
 
                         <div class="form-group">
-                            <input type="tel" id="telefono" class="form-control" required placeholder="Telefono Celular">
+                            <input type="tel" id="Telefono" name="Telefono" class="form-control" required placeholder="Telefono Celular">
                         </div>
 
                         <input type="submit" id="botonRegistrarse" class="btn btn-primary" value="Registrarse">
