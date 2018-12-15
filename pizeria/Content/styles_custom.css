@@ -6,6 +6,10 @@ footer ul li {
     margin-bottom: 12px;
 }
 
+.deslizador {
+    margin-bottom: 0;
+}
+
 .content-hogar {
     position: relative;
     max-width: 100%;
@@ -14,11 +18,21 @@ footer ul li {
 
 .content-hogar h3 {
     font-size: 30px;
+    margin: 20px 0 20px 0px;
+    color: #aaa !important;
+}
+
+.content-hogar .texto-de-arriba {
+    margin-bottom: 0px;
 }
 
 .info-deslizador {
     background: #000000;
     color: #ffffff;
+    margin-top: 0px;
+    height: auto;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
 }
 
 .info-deslizador div {

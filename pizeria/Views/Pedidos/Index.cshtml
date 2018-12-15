@@ -1,0 +1,100 @@
+﻿@model IEnumerable<pizeria.Models.Pedido>
+
+@{
+    ViewBag.Title = "Pedidos";
+}
+<!-- Page Content-->
+<main class="page-content container">
+    <div class="well">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="tabla table table-hover">
+                    <thead class="tabla-head">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Importe</th>
+                            <th scope="col">Direcci&oacute;n</th>
+                            <th scope="col">Tel&eacute;fono</th>
+                            <th scope="col">Pedido</th>
+                            <th scope="col">Acci&oacute;n</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr class="columna" 
+                            style="background: @{
+
+                                string colorEntregado = "#228B22";
+                                string colorCancelado = "#E03C31";
+                                string colorPendiente = "#FFFFFF";
+
+                                if (item.estado == pizeria.Models.EstadoPedido.PENDIENTE) {
+                                    @colorPendiente
+                                } else if (item.estado == pizeria.Models.EstadoPedido.CANCELADO)
+                                {
+                                    @colorCancelado
+                                } else if (item.estado == pizeria.Models.EstadoPedido.ENTREGADO)
+                                {
+                                    @colorEntregado
+                                }
+                             } ">
+                            <th scope="row">@item.ID</th>
+                            <td>@item.fecha.ToShortDateString()</td>
+                            <td>$@item.importe</td>
+                            <td>@item.direccion</td>
+                            <td>@item.telefono</td>
+
+                            @if (item.productos != null) {
+                            <td>@foreach (pizeria.Models.Producto producto in item.productos)
+                                {
+                                    <p>@producto.Nombre</p>
+                                }
+                            </td>
+                            } else
+                            {
+                                <td>@item.estado.ToString()</td>
+                            }
+
+                            <td>
+                                <form>
+                                    @{
+                                        string idBoton = "boton" + item.ID.ToString();
+                                        string idForm = "form" + item.ID.ToString();
+
+                                        string mostrar = "display: block";
+                                        string ocultar = "display: none";
+                                    }
+
+                                    <div class="form-group" id="@idForm" style="@if (item.estado == pizeria.Models.EstadoPedido.PENDIENTE)
+                                                        { 
+                                                            @mostrar 
+                                                        }
+                                                        else
+                                                        { 
+                                                            @ocultar
+                                                        }" >
+                                        <select class="form-control entregar_cancelar" data-id="@item.ID.ToString()">
+                                            <option selected></option>
+                                            <option value="Entregar">Entregar</option>
+                                            <option value="Cancelar">Cancelar</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <button type="button" id="@idBoton" class="btn btn-default botonReset" style="@if (item.estado != pizeria.Models.EstadoPedido.PENDIENTE) { @mostrar }" data-id="@item.ID.ToString()">Reset</button>
+                                </form>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@section Scripts {
+    <script type="text/javascript" src="~/Scripts/sucursal.js"></script>
+}
