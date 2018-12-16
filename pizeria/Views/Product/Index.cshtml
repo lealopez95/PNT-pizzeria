@@ -34,12 +34,12 @@
                                     <div class="col-md-4">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <input type="text" value="1" class="cantity-box" name="cantity" />
-                                                <a href="#" class="btn btn-default">+</a>
-                                                <a href="#" class="btn btn-default">-</a>
+                                                <input type="number" value="1" class="cantity-box" id="qty_@item.ID" style="background-color: white"/>
+                                                @*<a href="#" class="btn btn-default">+</a>*@
+                                                @*<a href="#" class="btn btn-default">-</a>*@
                                             </div>
                                             <div class="col-md-12">
-                                                <a href="#" class="btn btn-default">Agregar al carrito</a>
+                                                <a href="#" class="btn btn-default" onclick="addToChart(@item.ID)"><i class="fas fa-user"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -53,6 +53,38 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script type="text/javascript">
+        function addToChart(id) {
+            let qty = $("#qty_" + id).val();
+            alert(qty)
+            obj = {
+                id: id,
+                qty: qty
+            };
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("addProductToChart", "Pedidos")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(obj) ,
+                dataType: "json",
+                success: function (pedido) {
+                    alert(pedido.productos.length)
+                    $("#cart-qty").html(pedido.productos.length);
+                    //pedido.productos.forEach(function (producto) {
+                    //    pedido.productos.lenght;
+                    //});
+
+                },
+                error: function (a, jqXHR, exception) {
+                    alert(a + ' - ' + jqXHR + ' - ' + exception)
+                }
+            });
+
+        }
+    </script>
+}
 
 
 

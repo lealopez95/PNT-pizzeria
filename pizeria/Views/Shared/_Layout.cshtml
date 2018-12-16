@@ -66,7 +66,17 @@
                             <!-- RD Navbar Nav-->
                             <div class="rd-navbar-nav-wrap">
                                 <!-- RD Navbar Shop-->
-                                <div class="rd-navbar-shop"><a href="shop-cart.html" class="link link-shop link-default"><span class="big text-gray-light">Cart</span><span class="icon icon-sm mdi mdi-cart-outline"></span><span class="label-inline big text-white">2</span></a></div>
+                                <div class="rd-navbar-shop">
+                                    
+                                    <a href="shop-cart.html" class="link link-shop link-default">
+                                        <span class="big text-gray-light">Cart</span>
+                                        <span class="icon icon-sm mdi mdi-cart-outline"></span>
+                                        <span class="label-inline big text-white" id="cart-qty">
+                                            @(Session["cartQty"] != null? Session["cartQty"]:0)
+                                        </span>
+                                    </a>
+                                    
+                                </div>
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
                                     <li>

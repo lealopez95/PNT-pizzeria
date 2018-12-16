@@ -15,6 +15,70 @@ namespace pizeria.Controllers
     {
         private ContextoDBContext db = new ContextoDBContext();
 
+
+
+        [HttpPost]
+        public ActionResult addProductToChart(int id,int qty)
+        {
+            Producto producto;
+            Pedido pedido;
+            Usuario user;
+
+            Session["ID"] = 1000;
+
+            if (Session["ID"] != null){
+                producto = db.productos.Find(id);
+                user = db.usuarios.Find(Session["ID"]);
+                /**
+                 pedido = buscarPedido(user.ID);
+                 if(pedido != null){
+                    crearPedido();
+                }else{
+                    agregarProductoAlPedido();
+                }
+                 
+                 */
+
+                //test Inicia
+                Usuario usuario = new Usuario();
+                usuario.ID = (int)Session["ID"];
+                usuario.NombreApellido = "Jorge Gomez";
+                usuario.Email = "abutelman@gmail.com";
+
+                Sucursal sucursal = new Sucursal();
+                sucursal.ID = 23;
+                sucursal.Nombre = "Caballito";
+                sucursal.Direccion = "Curapaligue 19";
+                sucursal.administrador = usuario;
+
+
+                List<Producto> productos = new List<Producto>();
+                productos.Add(producto);
+                
+                pedido = new Pedido();
+                pedido.ID = 4;
+                pedido.fecha = new DateTime(2018, 12, 18);
+                pedido.importe = 312.31;
+                pedido.direccion = "Sanabria 724, 4to B";
+                pedido.telefono = "4912-3135";
+                pedido.estado = EstadoPedido.PENDIENTE;
+                pedido.sucursal = sucursal;
+                pedido.productos = productos;
+                Session["cartQty"] = productos.Count;
+                //Test Finaliza
+
+                return Json(pedido);
+            }else{
+                return Json("Debe iniciar sesión");
+            }
+
+            
+           
+            
+        }
+
+
+
         // GET: Pedidos/SetearPendiente/1
         public string SetearPendiente(int id)
         {
